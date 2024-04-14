@@ -9,7 +9,7 @@ public class Invoice {
 
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
 
     public Invoice() {
     }

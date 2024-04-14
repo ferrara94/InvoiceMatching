@@ -8,23 +8,23 @@ public class InvoiceLineItem {
 
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name="invoice_id", nullable=false)
-    Invoice invoice;
+    private Invoice invoice;
 
-    String delivery_number;
-    String title;
-    String unit;
-    Float amount;
-    Float price;
+    private String deliveryNumber;
+    private String title;
+    private String unit;
+    private Float amount;
+    private Float price;
 
     public InvoiceLineItem() {
     }
 
-    public InvoiceLineItem(String delivery_number, String title, String unit, Float amount, Float price) {
-        this.delivery_number = delivery_number;
+    public InvoiceLineItem(String deliveryNumber, String title, String unit, Float amount, Float price) {
+        this.deliveryNumber = deliveryNumber;
         this.title = title;
         this.unit = unit;
         this.amount = amount;
