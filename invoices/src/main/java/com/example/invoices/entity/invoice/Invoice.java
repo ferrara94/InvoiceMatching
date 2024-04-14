@@ -1,8 +1,8 @@
 package com.example.invoices.entity.invoice;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "INVOICE")
@@ -10,6 +10,9 @@ public class Invoice {
 
     @Id
     Long id;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "iLineId", cascade = CascadeType.ALL)
+    private List<InvoiceLineItem> invoiceLines;
 
     public Invoice() {
     }

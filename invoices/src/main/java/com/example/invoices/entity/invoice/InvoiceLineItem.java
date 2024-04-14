@@ -9,6 +9,7 @@ import jakarta.persistence.Table;
 public class InvoiceLineItem {
 
     @Id
+    String iLineId;
     String delivery_number;
     String title;
     String unit;

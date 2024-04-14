@@ -9,6 +9,8 @@ import jakarta.persistence.Table;
 public class DeliveryLineItem {
 
     @Id
+    String dLineId;
+
     String title;
     String unit;
 
@@ -17,7 +19,8 @@ public class DeliveryLineItem {
     public DeliveryLineItem() {
     }
 
-    public DeliveryLineItem(String title, String unit, Float amount) {
+    public DeliveryLineItem(String dLineId, String title, String unit, Float amount) {
+        this.dLineId = dLineId;
         this.title = title;
         this.unit = unit;
         this.amount = amount;
