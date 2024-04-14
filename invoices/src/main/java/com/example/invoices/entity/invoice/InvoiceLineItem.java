@@ -1,15 +1,19 @@
 package com.example.invoices.entity.invoice;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "INVOICE_LINE_ITEM")
 public class InvoiceLineItem {
 
     @Id
-    String iLineId;
+    @GeneratedValue
+    Long id;
+
+    @ManyToOne
+    @JoinColumn(name="invoice_id", nullable=false)
+    Invoice invoice;
+
     String delivery_number;
     String title;
     String unit;
