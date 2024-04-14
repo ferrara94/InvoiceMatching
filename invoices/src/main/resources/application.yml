@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: InvoiceWebService
+  # ==============================================================
+  # = DBMS PostgreSQL Parameters
+  # ==============================================================
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    password: root
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/invoices_db
+    username: root
+    jpa:
+      hibernate:
+        ddl-auto: none
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          jdbc:
+            lob:
+              non_contextual_creation: true
+      show-sql: true
