@@ -17,7 +17,10 @@
       </thead>
       <tbody>
         <!-- <app-invoice-line-item></app-invoice-line-item> -->
-        <tr *ngFor="let line of invoice?.lines">
+        <tr
+          *ngFor="let line of invoice?.lines"
+          [class.table-danger]="!isInvoiceMatched(line.delivery_number!)"
+        >
           <td>{{ line.delivery_number }}</td>
           <td>{{ line.title }}</td>
           <td>{{ line.unit }}</td>
