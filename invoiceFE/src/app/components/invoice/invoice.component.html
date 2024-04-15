@@ -19,7 +19,7 @@
         <!-- <app-invoice-line-item></app-invoice-line-item> -->
         <tr
           *ngFor="let line of invoice?.lines"
-          [class.table-danger]="!isInvoiceMatched(line.delivery_number!)"
+          [class.table-danger]="matching.number===line.delivery_number && !matching.isMatched"
         >
           <td>{{ line.delivery_number }}</td>
           <td>{{ line.title }}</td>
