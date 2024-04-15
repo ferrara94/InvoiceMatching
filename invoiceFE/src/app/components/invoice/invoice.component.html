@@ -1,1 +1,30 @@
-<p>invoice works!</p>
+<div class="card" style="width: 1000px">
+  <h3>Invoice from BetonAG</h3>
+  <div class="card-header">
+    <a class="btn btn-success" routerLink="">Compare with the Delivery</a>
+  </div>
+  <!-- Invoice Lines section -->
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead class="bg-black table-secondary text-white">
+        <tr>
+          <td>Delivery n°</td>
+          <td>title</td>
+          <td>unit</td>
+          <td>price</td>
+          <td>amount</td>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <app-invoice-line-item></app-invoice-line-item> -->
+        <tr *ngFor="let line of invoice?.lines">
+          <td>{{ line.delivery_number }}</td>
+          <td>{{ line.title }}</td>
+          <td>{{ line.unit }}</td>
+          <td>{{ line.amount }}</td>
+          <td>{{ line.price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

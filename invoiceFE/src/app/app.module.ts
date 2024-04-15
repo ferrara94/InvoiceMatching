@@ -7,6 +7,7 @@ import { InvoiceComponent } from './components/invoice/invoice.component';
 import { DeliveryComponent } from './components/delivery/delivery.component';
 import { DeliveryLineItemComponent } from './components/delivery-line-item/delivery-line-item.component';
 import { InvoiceLineItemComponent } from './components/invoice-line-item/invoice-line-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InvoiceLineItemComponent } from './components/invoice-line-item/invoice
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
