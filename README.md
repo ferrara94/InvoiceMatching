@@ -67,7 +67,7 @@ Spring BE for Invoice Matching Purpose
 
 In the project exists a **SpringBoot** project called **invoice**.
 
-This project is used to provide (ideally it should but is not ready connected and not working properly) **Rest APIs, Services and Elaboration** to the Front-end; 
+This project is used to provide (ideally it should but is not ready connected) **Rest APIs, Services and Elaboration** to the Front-end; 
 
 To run back-end service there are several ways:
 
