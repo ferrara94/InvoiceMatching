@@ -45,7 +45,26 @@ export class InvoiceComponent implements OnInit {
     ]);
   }
 
-  isInvoiceMatched2nd(dyNumber: string): boolean {
+  /**
+   * @ngdoc function
+   * @name compareInvoiceByDeliveryNumber
+   * @methodOf
+   * @description
+   *
+   * ----> !!!!IMPORTANT!!!! <----
+   * The algorithm is here just for testing purposes.
+   * THe logic should be located in the backend side
+   * ---------------------
+   *
+   * This method is used to check if an invoice matches with delivery notes
+   * So far the algorithm create from scratch dummy data and variables;
+   * In general it is supposed to get them from an external services like Rest APIs.
+   *
+   * The algorithm for now only works a dummy unit like normal string and basic criteria of equality
+   * like 5 === 5.
+   * To face all scenarios I should apply some edit_distance principles.
+   */
+  compareInvoiceByDeliveryNumber(dyNumber: string): boolean {
     const deliveryLine1 = new DeliveryLine('ProductY', '10', 50);
     const deliveryLine2 = new DeliveryLine('ProductK', '7', 28);
     this.delivery = new Delivery('1', dyNumber, [deliveryLine1, deliveryLine2]);
@@ -80,12 +99,11 @@ export class InvoiceComponent implements OnInit {
       }
     });
 
-    if(deliveryAmount !== invoiceAmountByDelivery){
+    if (deliveryAmount !== invoiceAmountByDelivery) {
       matching.isMatched = false;
     }
 
     this.matching = matching;
-
 
     return matching.isMatched;
   }

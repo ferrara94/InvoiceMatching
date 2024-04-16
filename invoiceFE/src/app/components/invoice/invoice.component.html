@@ -1,10 +1,15 @@
 <div class="card" style="width: 1000px">
   <h3>Invoice from BetonAG</h3>
   <div class="card-header">
-    <button class="btn btn-success" (click)="isInvoiceMatched2nd(dyNumber.value)">Compare with the Delivery</button>
-    <div style="margin-left: 15px; margin-top: 10px;">
+    <button
+      class="btn btn-success"
+      (click)="compareInvoiceByDeliveryNumber(dyNumber.value)"
+    >
+      Compare with the Delivery
+    </button>
+    <div style="margin-left: 15px; margin-top: 10px">
       <label>Delivery N°</label>
-      <input id="dyNumber" type="text" [formControl]="dyNumber">
+      <input id="dyNumber" type="text" [formControl]="dyNumber" />
     </div>
   </div>
   <!-- Invoice Lines section -->
@@ -23,7 +28,9 @@
         <!-- <app-invoice-line-item></app-invoice-line-item> -->
         <tr
           *ngFor="let line of invoice?.lines"
-          [class.table-danger]="matching.number===line.delivery_number && !matching.isMatched"
+          [class.table-danger]="
+            matching.number === line.delivery_number && !matching.isMatched
+          "
         >
           <td>{{ line.delivery_number }}</td>
           <td>{{ line.title }}</td>
@@ -38,9 +45,8 @@
 
 <!-- Delivery note-->
 <div class="card" style="width: 1000px">
-  <h3>Delivery N° {{dyNumber.value}}</h3>
-  <div class="card-header">
-  </div>
+  <h3>Delivery N° {{ dyNumber.value }}</h3>
+  <div class="card-header"></div>
   <!-- Invoice Lines section -->
   <div class="card-body">
     <table class="table table-bordered">
@@ -53,9 +59,7 @@
       </thead>
       <tbody>
         <!-- <app-invoice-line-item></app-invoice-line-item> -->
-        <tr
-          *ngFor="let line of delivery?.delivery_lines"
-        >
+        <tr *ngFor="let line of delivery?.delivery_lines">
           <td>{{ line.title }}</td>
           <td>{{ line.unit }}</td>
           <td>{{ line.amount }}</td>
