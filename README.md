@@ -32,3 +32,12 @@ To run back-end service there are several ways:
 
 - [ ] right click on project + run as Spring Boot App
 - [ ] by command line lunch: mvn spring-boot:run
+
+---
+
+#### > Persistence Layer
+
+In the project exists a **Docker** directory where it is located the **docker-compose** file.
+
+It can be use to generate a PostgreSQL instace.
+
