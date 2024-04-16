@@ -1,14 +1,12 @@
+server:
+  port: 5555
+
 spring:
   application:
     name: InvoiceWebService
-  # ==============================================================
-  # = DBMS PostgreSQL Parameters
-  # ==============================================================
   datasource:
     driver-class-name: org.postgresql.Driver
-    initialization-mode: always
     password: root
-    platform: postgres
     url: jdbc:postgresql://localhost:5432/invoices_db
     username: root
   jpa:
@@ -21,4 +19,8 @@ spring:
           lob:
             non_contextual_creation: true
     show-sql: true
+  sql:
+    init:
+      mode: always
+      platform: postgres
 
