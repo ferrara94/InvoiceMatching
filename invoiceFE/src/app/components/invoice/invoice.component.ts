@@ -57,8 +57,8 @@ export class InvoiceComponent implements OnInit {
   }
 
   isInvoiceMatched2nd(dyNumber: string): boolean {
-    const deliveryLine1 = new DeliveryLine('ProductK', '10', 50);
-    const deliveryLine2 = new DeliveryLine('ProductY', '7', 29);
+    const deliveryLine1 = new DeliveryLine('ProductY', '10', 50);
+    const deliveryLine2 = new DeliveryLine('ProductK', '7', 28);
     this.delivery = new Delivery('1', dyNumber, [deliveryLine1, deliveryLine2]);
 
     let matching = {
