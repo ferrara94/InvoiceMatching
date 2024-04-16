@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface InvoiceLineRepository extends JpaRepository<InvoiceLineItem, Long>{
 
-    @Query("select new com.example.invoices.model.InvoiceLineItemDto(item.deliveryNumber, item.title, item.unit, item.amount, item.price ) " +
+    @Query("select new com.example.invoices.model.InvoiceLineItemDto(item.deliveryNumber, item.title, item.unit, item.amount, item.price) " +
             "from InvoiceLineItem as item " +
             "join item.invoice as invoice " +
             "where invoice.id = :invoiceId ")

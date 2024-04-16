@@ -14,7 +14,7 @@ public interface DeliveryLineRepository extends JpaRepository<DeliveryLineItem, 
 
     @Query("select new com.example.invoices.model.DeliveryLineItemDto(deliveryLineItems.title, deliveryLineItems.unit, deliveryLineItems.amount) " +
             "from DeliveryLineItem as deliveryLineItems " +
-            "join deliveryLineItems.delivery as delivery" +
+            "join deliveryLineItems.delivery as delivery " +
             "where delivery.deliveryNumber = :deliveryNumber ")
     List<DeliveryLineItemDto> findDeliveryLineItemsByDeliveryNumber(@Param("deliveryNumber") String deliveryNumber);
 }
