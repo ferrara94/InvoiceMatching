@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "63b4e9e8-b66b-4e6a-bbba-b6b266f8b70a",
+		"name": "Invoice-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34106469"
+	},
+	"item": [
+		{
+			"name": "create invoice",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/api/invoice",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"invoice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create delivery",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryNumber\": \"DLN001\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/api/delivery",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create invoice item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Product Z\",\r\n    \"unit\": \"m3\",\r\n    \"amount\": 10,\r\n    \"price\": 5,\r\n    \"deliveryNumber\": \"DLN001\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/api/invoice/12345/invoice-items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"invoice",
+						"12345",
+						"invoice-items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create invoice item 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Product Z\",\r\n    \"unit\": \"m3\",\r\n    \"amount\": 10,\r\n    \"price\": 5,\r\n    \"deliveryNumber\": \"DLN001\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/api/invoice/12345/invoice-items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"invoice",
+						"12345",
+						"invoice-items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create delivery item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Product Z\",\r\n    \"unit\": \"m3\",\r\n    \"amount\": 98\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/api/delivery/1/delivery-items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"delivery",
+						"1",
+						"delivery-items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create delivery item 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Product Z\",\r\n    \"unit\": \"m3\",\r\n    \"amount\": 98\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/api/delivery/1/delivery-items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"delivery",
+						"1",
+						"delivery-items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invoice check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5555/api/invoice/12345/check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"invoice",
+						"12345",
+						"check"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
