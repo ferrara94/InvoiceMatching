@@ -41,3 +41,8 @@ In the project exists a **Docker** directory where it is located the **docker-co
 
 It can be use to generate a PostgreSQL instace.
 
+#### > How the UI should look like
+
+![image](https://github.com/ferrara94/InvoiceMatching/assets/45211249/0f0554ba-6ec2-4c53-a608-20991e18380a)
+
+
