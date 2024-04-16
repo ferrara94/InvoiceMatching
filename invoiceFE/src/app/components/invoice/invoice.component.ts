@@ -65,8 +65,8 @@ export class InvoiceComponent implements OnInit {
    * To face all scenarios I should apply some edit_distance principles.
    */
   compareInvoiceByDeliveryNumber(dyNumber: string): boolean {
-    const deliveryLine1 = new DeliveryLine('ProductY', '10', 50);
-    const deliveryLine2 = new DeliveryLine('ProductK', '7', 28);
+    const deliveryLine1 = new DeliveryLine('ProductX', '10', 50);
+    const deliveryLine2 = new DeliveryLine('ProductY', '7', 29);
     this.delivery = new Delivery('1', dyNumber, [deliveryLine1, deliveryLine2]);
 
     let matching = {
