@@ -9,8 +9,8 @@ export class InvoiceLine {
     delivery_number?: string,
     title?: string,
     unit?: string,
-    amount?: number,
-    price?: number
+    price?: number,
+    amount?: number
   ) {
     this.delivery_number = delivery_number;
     this.title = title;

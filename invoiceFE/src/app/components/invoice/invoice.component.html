@@ -1,7 +1,11 @@
 <div class="card" style="width: 1000px">
   <h3>Invoice from BetonAG</h3>
   <div class="card-header">
-    <a class="btn btn-success" routerLink="">Compare with the Delivery</a>
+    <button class="btn btn-success" (click)="isInvoiceMatched2nd(dyNumber.value)">Compare with the Delivery</button>
+    <div style="margin-left: 15px; margin-top: 10px;">
+      <label>Delivery N°</label>
+      <input id="dyNumber" type="text" [formControl]="dyNumber">
+    </div>
   </div>
   <!-- Invoice Lines section -->
   <div class="card-body">
@@ -26,6 +30,35 @@
           <td>{{ line.unit }}</td>
           <td>{{ line.amount }}</td>
           <td>{{ line.price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Delivery note-->
+<div class="card" style="width: 1000px">
+  <h3>Delivery N° {{dyNumber.value}}</h3>
+  <div class="card-header">
+  </div>
+  <!-- Invoice Lines section -->
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead class="bg-black table-secondary text-white">
+        <tr>
+          <td>title</td>
+          <td>unit</td>
+          <td>amount</td>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <app-invoice-line-item></app-invoice-line-item> -->
+        <tr
+          *ngFor="let line of delivery?.delivery_lines"
+        >
+          <td>{{ line.title }}</td>
+          <td>{{ line.unit }}</td>
+          <td>{{ line.amount }}</td>
         </tr>
       </tbody>
     </table>

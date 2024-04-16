@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Delivery } from 'src/app/classes/Delivery.class';
 import { DeliveryLine } from 'src/app/classes/DeliveryLine.class';
 import { Invoice } from 'src/app/classes/Invoice.class';
@@ -17,14 +18,14 @@ export class InvoiceComponent implements OnInit {
     isMatched: false,
     number: '',
   };
+  delivery: Delivery | undefined;
+  dyNumber = new FormControl('');
 
   constructor(private invoiceService: InvoiceService) {
     this.LoadInvoice();
   }
 
-  ngOnInit(): void {
-    this.isInvoiceMatched2nd();
-  }
+  ngOnInit(): void {}
 
   LoadInvoice() {
     /**
@@ -55,30 +56,34 @@ export class InvoiceComponent implements OnInit {
     return false;
   }
 
-  isInvoiceMatched2nd(): boolean {
-    const deliveryLine1 = new DeliveryLine('ProductX', '10', 50);
-    const deliveryLine2 = new DeliveryLine('ProductY', '6', 28);
-    const delivery = new Delivery('1', 'DLN001', [
-      deliveryLine1,
-      deliveryLine2,
-    ]);
+  isInvoiceMatched2nd(dyNumber: string): boolean {
+    const deliveryLine1 = new DeliveryLine('ProductK', '10', 50);
+    const deliveryLine2 = new DeliveryLine('ProductY', '7', 29);
+    this.delivery = new Delivery('1', dyNumber, [deliveryLine1, deliveryLine2]);
 
     let matching = {
       isMatched: false,
       number: '',
     };
+    matching.number = this.delivery.delivery_number!;
 
     const itemsByDelivery = this.invoice?.lines?.filter(
-      (line) => line.delivery_number === delivery.delivery_number
+      (line) => line.delivery_number === this.delivery!.delivery_number
     );
     console.log(itemsByDelivery);
 
     const titles = new Map<string, string>();
-    itemsByDelivery?.forEach((item) => titles.set(item.title!, item.unit!));
+    let invoiceAmountByDelivery = 0.0;
+    itemsByDelivery?.forEach((item) => {
+      titles.set(item.title!, item.unit!);
+      invoiceAmountByDelivery += item.amount!;
+    });
     console.log(titles);
 
     let isTitleMatched;
-    delivery.delivery_lines?.forEach((line) => {
+    let deliveryAmount = 0.0;
+    this.delivery.delivery_lines?.forEach((line) => {
+      deliveryAmount += line.amount!;
       isTitleMatched = titles.get(line.title!);
       if (isTitleMatched === undefined) {
         matching.isMatched = false;
@@ -88,7 +93,11 @@ export class InvoiceComponent implements OnInit {
       }
     });
 
-    matching.number = delivery.delivery_number!;
+    console.log(deliveryAmount,invoiceAmountByDelivery)
+    if(deliveryAmount !== invoiceAmountByDelivery){
+      matching.isMatched = false;
+    }
+
     this.matching = matching;
     console.log(matching);
 
