@@ -11,6 +11,19 @@ To run the application, remember to install needed packages (node modules) with 
 where the *package.json* is located. 
 
 ---
+#### > Versions and dependencies
+
+Angular CLI: **12.2.18**
+
+Node: **12.22.12**
+
+Package Manager: **npm 6.14.16**
+
+OS: **linux x64**
+
+Angular: **12.2.17**
+
+---
 
 #### > run front-end
 
