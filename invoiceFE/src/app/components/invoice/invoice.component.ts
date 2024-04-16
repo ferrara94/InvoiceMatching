@@ -33,10 +33,10 @@ export class InvoiceComponent implements OnInit {
         this.invoice = res;
       });
      */
-    const invoiceLine1 = new InvoiceLine('DLN001', 'ProductX', '10', 5, 50);
-    const invoiceLine2 = new InvoiceLine('DLN001', 'ProductY', '7', 4, 28);
-    const invoiceLine3 = new InvoiceLine('XFN001', 'ProductZ', '8', 2, 16);
-    const invoiceLine4 = new InvoiceLine('KYN005', 'ProductK', '1', 2, 2);
+    const invoiceLine1 = new InvoiceLine('DLN001', 'ProductX', '10m3', 5, 50);
+    const invoiceLine2 = new InvoiceLine('DLN001', 'ProductY', '7kg', 4, 28);
+    const invoiceLine3 = new InvoiceLine('XFN001', 'ProductZ', '8t', 2, 16);
+    const invoiceLine4 = new InvoiceLine('KYN005', 'ProductK', '1T', 2, 2);
     this.invoice = new Invoice(1, [
       invoiceLine1,
       invoiceLine2,
@@ -65,8 +65,8 @@ export class InvoiceComponent implements OnInit {
    * To face all scenarios I should apply some edit_distance principles.
    */
   compareInvoiceByDeliveryNumber(dyNumber: string): boolean {
-    const deliveryLine1 = new DeliveryLine('ProductX', '10', 50);
-    const deliveryLine2 = new DeliveryLine('ProductY', '7', 29);
+    const deliveryLine1 = new DeliveryLine('ProductX', '10m3', 50);
+    const deliveryLine2 = new DeliveryLine('ProductY', '7kg', 29);
     this.delivery = new Delivery('1', dyNumber, [deliveryLine1, deliveryLine2]);
 
     let matching = {
