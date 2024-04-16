@@ -13,15 +13,15 @@ where the *package.json* is located.
 ---
 #### > Versions and dependencies
 
-Angular CLI: 12.2.18
+Angular CLI: **12.2.18**
 
-Node: 12.22.12
+Node: **12.22.12**
 
-Package Manager: npm 6.14.16
+Package Manager: **npm 6.14.16**
 
-OS: linux x64
+OS: **linux x64**
 
-Angular: 12.2.17
+Angular: **12.2.17**
 
 ---
 
