@@ -45,17 +45,6 @@ export class InvoiceComponent implements OnInit {
     ]);
   }
 
-  isInvoiceMatched(delivery_number: string): boolean {
-    //this.isInvoiceMatched2nd();
-    if (delivery_number === 'DLN001') {
-      return true;
-    }
-    if (delivery_number === 'KYN005') {
-      return true;
-    }
-    return false;
-  }
-
   isInvoiceMatched2nd(dyNumber: string): boolean {
     const deliveryLine1 = new DeliveryLine('ProductY', '10', 50);
     const deliveryLine2 = new DeliveryLine('ProductK', '7', 28);
@@ -70,7 +59,6 @@ export class InvoiceComponent implements OnInit {
     const itemsByDelivery = this.invoice?.lines?.filter(
       (line) => line.delivery_number === this.delivery!.delivery_number
     );
-    console.log(itemsByDelivery);
 
     const titles = new Map<string, string>();
     let invoiceAmountByDelivery = 0.0;
@@ -78,7 +66,6 @@ export class InvoiceComponent implements OnInit {
       titles.set(item.title!, item.unit!);
       invoiceAmountByDelivery += item.amount!;
     });
-    console.log(titles);
 
     let isTitleMatched;
     let deliveryAmount = 0.0;
@@ -93,15 +80,12 @@ export class InvoiceComponent implements OnInit {
       }
     });
 
-    console.log(deliveryAmount,invoiceAmountByDelivery)
     if(deliveryAmount !== invoiceAmountByDelivery){
       matching.isMatched = false;
     }
 
     this.matching = matching;
-    console.log(matching);
 
-    //remainng check for the amount
 
     return matching.isMatched;
   }
