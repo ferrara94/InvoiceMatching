@@ -58,6 +58,6 @@ It can be use to generate a PostgreSQL instace.
 
 #### > How the UI should look like
 
-![image](https://github.com/ferrara94/InvoiceMatching/assets/45211249/0f0554ba-6ec2-4c53-a608-20991e18380a)
+![image](https://github.com/ferrara94/InvoiceMatching/assets/45211249/74408efe-f766-4ef9-b1a6-199b700409b1)
 
 You can have a look at a running example (screen recording) [here](https://github.com/ferrara94/InvoiceMatching/commit/770cc9775b46df7e8bb5c9684b0fa238ad02a7d1#r141029919)
