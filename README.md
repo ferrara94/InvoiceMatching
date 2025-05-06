@@ -45,7 +45,7 @@ To start the Angular Single Page Application (SPA), use the following command in
 
 ---
 
-#### > How the UI should look like
+## How the UI should look like
 
 ![image](https://github.com/ferrara94/InvoiceMatching/assets/45211249/74408efe-f766-4ef9-b1a6-199b700409b1)
 
